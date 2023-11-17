@@ -3,6 +3,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/message")
 public class MessageController {
@@ -25,6 +27,11 @@ public class MessageController {
         return ResponseEntity.ok("Correo electrónico enviado con éxito");
     }
 
+    @GetMapping()
+    public List<Message> showMessage(){
+        List<Message> result = messageService.showMessages();
+        return result;
+    }
 
 }
 

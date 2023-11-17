@@ -21,5 +21,7 @@ public class MessageService {
         return message;
     }
 
-
+    public List<Message> showMessages(){
+        return this.messages;
+    }
 }
